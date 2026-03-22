@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 
+interface Props {
+  items: string[];
+  heading: string;
+}
+
 // import { Fragment } from "react/jsx-runtime";
-function ListGroup() {
-  let items = [
-    "An item",
-    "A second item",
-    "A third item",
-    "A fourth item",
-    "And a fifth one",
-  ];
+function ListGroup({ items, heading }: Props) {
   // let selectedItem = 0;
 
   //Hooks
@@ -42,7 +40,7 @@ function ListGroup() {
   return (
     // <Fragment>
     <>
-      <h1>List Group</h1>
+      <h1>{heading}</h1>
       {/* {GetMessage()} */}
       {items.length === 0 && <p>There are no items in the list.</p>}
       <ul className="list-group">
