@@ -1,3 +1,4 @@
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 // import Message from './Message';
 function App() {
@@ -11,11 +12,17 @@ function App() {
 
   const handleSelectItem = (item: string) => console.log(item);
   return (
-    <ListGroup
-      items={items}
-      heading="List Group"
-      onSelectItem={handleSelectItem}
-    />
+    <>
+      {/* <Alert message="hi" /> */}
+      <Alert>
+        <span>Hiiiiiiii</span>hi{" "}
+      </Alert>
+      <ListGroup
+        items={items}
+        heading="List Group"
+        onSelectItem={handleSelectItem}
+      />
+    </>
   );
 }
 
