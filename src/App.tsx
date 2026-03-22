@@ -8,7 +8,15 @@ function App() {
     "A fourth item",
     "And a fifth one",
   ];
-  return <ListGroup items={items} heading="List Group" />;
+
+  const handleSelectItem = (item: string) => console.log(item);
+  return (
+    <ListGroup
+      items={items}
+      heading="List Group"
+      onSelectItem={handleSelectItem}
+    />
+  );
 }
 
 export default App;

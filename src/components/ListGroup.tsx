@@ -5,10 +5,11 @@ import { useState } from "react";
 interface Props {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
 // import { Fragment } from "react/jsx-runtime";
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   // let selectedItem = 0;
 
   //Hooks
@@ -52,7 +53,10 @@ function ListGroup({ items, heading }: Props) {
                 : "list-group-item"
             }
             key={item}
-            onClick={() => setSelectedItem(index)}
+            onClick={() => {
+              setSelectedItem(index);
+              onSelectItem(item);
+            }}
           >
             {item}
           </li>
